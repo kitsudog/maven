@@ -1,6 +1,12 @@
 name: Docker Build and Push
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'info'
   push:
     paths:
       - '.ci/Dockerfile'
